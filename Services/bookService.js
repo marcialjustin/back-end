@@ -1,4 +1,4 @@
-import * as bookModel from '../models/bookModel.js';
+import * as bookModel from '../Models/bookModels.js';
 
 
 
@@ -11,8 +11,14 @@ return books;
 
 
     export const createBook = async (book) => {
-        const bookId = await bookModel.create(book);
+        const bookId = await bookModel.insert(book);
         return bookId;
-   
-   
     }
+
+export const updateBook = async (book) => {
+    return bookModel.update(book);
+};
+
+export const deleteBook = async (id) => {
+    return bookModel.remove(id);
+};
